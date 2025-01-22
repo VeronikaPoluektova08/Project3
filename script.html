@@ -1,19 +1,22 @@
-
 <!DOCTYPE HTML>
 <html>
 
 <body>
 
   <script>
-let a = parseFloat(prompt("Введите коэффициент a:"));
-let b = parseFloat(prompt("Введите коэффициент b:"));
-let c = parseFloat(prompt("Введите коэффициент c:"));
+let white = 75;
+let black = 150;
 
-// Вычисляем дискриминант
-let discr = b ** 2 - 4 * a * c;
+while (white + black > 1) {
+    if (white >= 2) {
+        white -= 2;  // Убираем две белые фасоли
+        black += 1;  // Добавляем одну черную
+    } else {
+        black -= 1;  // Убираем одну черную фасоль
+    }
+}
 
-// Выводим дискриминант
-alert("Дискриминант D = " + discr.toString());
+alert(white === 1 ? "Белый горошек остался" : "Черный горошек остался");
   </script>
 
 </body>
