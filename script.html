@@ -3,21 +3,27 @@
 
 <body>
 
-  <script>
-let white = 75;
-let black = 150;
+  <p>Перед скриптом...</p>
 
-while (white + black > 1) {
-    if (white >= 2) {
-        white -= 2;  // Убираем две белые фасоли
-        black += 1;  // Добавляем одну черную
-    } else {
-        black -= 1;  // Убираем одну черную фасоль
+  <script>
+function findMinimumWeighings(targetWeight) {
+    let weighings = 0;
+    while (targetWeight > 0) {
+        // Для каждого взвешивания проверяем, можно ли отнять 1 грамм
+        targetWeight = Math.floor(targetWeight / 2);
+        weighings++;
     }
+    return weighings;
 }
 
-alert(white === 1 ? "Белый горошек остался" : "Черный горошек остался");
+// Пример: нахождение минимального количества взвешиваний для 1000 граммов
+let targetWeight = 1000; // 1 кг = 1000 граммов
+let result = findMinimumWeighings(targetWeight);
+
+alert("Минимальное количество взвешиваний для отмеривания 1 кг риса: " + result);
   </script>
+
+  <p>...После скрипта.</p>
 
 </body>
 
