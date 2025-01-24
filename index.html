@@ -1,25 +1,30 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Задача на логику</title>
-</head>
+<!DOCTYPE HTML>
+<html>
+
 <body>
-    <h1>Логическая задача</h1>
-    <p>Охранник сказал: "Девять". Сколько нужно ответить?</p>
 
-    <button onclick="calculateAnswer()">Посчитать ответ</button>
-    <p id="result"></p>
-
-    <script>
-        function calculateAnswer() {
-            const number = 9; // Число, которое сказал охранник
-            const hits = 3;   // Количество постукиваний
-            const answer = number - hits; // Разница между числом и постукиваниями
-
-            document.getElementById("result").innerText = "Ответ: " + answer;
+  <script>
+function buildPyramid(height) {
+    let pyramid = '';
+    for (let i = 1; i <= height; i++) {
+        let row = '';
+        for (let j = 1; j <= i; j++) {
+            row += j;
         }
-    </script>
+        pyramid += row + '\n'; // Добавляем строку к пирамиде
+    }
+    alert(pyramid); // Выводим пирамиду в модальном окне
+}
+
+// Пример вызова
+let height = parseInt(prompt("Введите высоту пирамиды:")); // Запрашиваем высоту у пользователя
+if (!isNaN(height) && height > 0) {
+    buildPyramid(height);
+} else {
+    alert("Введите корректное число!");
+}
+  </script>
+
 </body>
+
 </html>
