@@ -4,26 +4,17 @@
 <body>
 
   <script>
-function countLettersInNumberWord(number) {
-    const numberWords = {
-        9: "девять",
-        22: "двадцать два",
-        26: "двадцать шесть"
-    };
-    
-    // Преобразуем число в строку и считаем количество букв
-    const word = numberWords[number];
-    if (word) {
-        const letterCount = word.replace(/\s+/g, '').length; // Убираем пробелы
-        alert(letterCount); // Показываем результат
-    } else {
-        alert("Неизвестное число");
+let table = ''; // Инициализируем переменную для таблицы
+
+for (let i = 1; i <= 10; i++) { // Внешний цикл для строк
+    for (let j = 1; j <= 10; j++) { // Внутренний цикл для столбцов
+        table += (i * j).toString().padStart(4, ' '); // Форматируем вывод для ровной таблицы
     }
+    table += '\n'; // Переход на новую строку
 }
 
-countLettersInNumberWord(9);  // Запуск для числа 9
+alert(table); // Выводим таблицу в alert
   </script>
-
 
 </body>
 
